@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'active_record/base'
+require 'active_record'
 
 module BundleNotification
   class Snippet < ActiveRecord::Base

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'active_support/time'
 require 'bundle_notification/snippet'
 
 module BundleNotification
@@ -30,7 +31,7 @@ module BundleNotification
     end
 
     def mark_snippets_sent
-      Snippet.where(id: unsent_snippets).update_all(sent_at: Time.zone.now)
+      Snippet.where(id: unsent_snippets).update_all(sent_at: (Time.zone || Time).now)
       @unsent_snippets = nil
     end
   end

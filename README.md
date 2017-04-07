@@ -21,7 +21,7 @@ Or install it yourself as:
     
 Create bundle_notification_snippets table:
 
-    $ rails g migration CreateBundleNotificationSnippets mailer_class:string:index recipient:string data:text sent_at:datetime 
+    $ rails g migration CreateBundleNotificationSnippets mailer_class:string:index recipient:string data:text sent_at:datetime created_at:datetime
     $ rake db:migrate
 
 ## Usage
