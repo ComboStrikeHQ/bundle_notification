@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'support/simplecov' # Must be required first
 require 'bundler/setup'
 require 'bundle_notification'
 require 'support/database'
