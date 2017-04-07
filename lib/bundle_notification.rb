@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'bundle_notification/mailer_helper'
 require 'bundle_notification/version'
 
