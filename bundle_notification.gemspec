@@ -4,20 +4,18 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'bundle_notification/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bundle_notification"
+  spec.name          = 'bundle_notification'
   spec.version       = BundleNotification::VERSION
-  spec.authors       = ["Guilherme Goettems Schneider"]
-  spec.email         = ["guigs81@gmail.com"]
+  spec.authors       = ['ad2games GmbH']
+  spec.email         = ['developers@ad2games.com']
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'Bundle ActionMailer notifications'
+  spec.description   = 'Bundle many ActionMailer messages for the same recipient into a single email'
+  spec.homepage      = "http://ad2games.com"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
