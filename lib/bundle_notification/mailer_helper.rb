@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'active_support/concern'
+
 require 'bundle_notification/deliver'
 require 'bundle_notification/snippet_message'
 
