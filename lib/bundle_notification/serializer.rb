@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'bundle_notification/config'
-
 module BundleNotification
   module Serializer
     class << self

@@ -2,6 +2,7 @@
 
 require 'bundle_notification/mailer_helper'
 require 'bundle_notification/version'
+require 'bundle_notification/config'
 
 module BundleNotification
   def self.configure
