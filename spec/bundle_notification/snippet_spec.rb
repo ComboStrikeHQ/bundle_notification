@@ -9,7 +9,7 @@ RSpec.describe BundleNotification::Snippet do
   end
 
   it 'uses the configured serializer' do
-    BundleNotification.config do |config|
+    BundleNotification.configure do |config|
       config.serializer = JSON
     end
 
