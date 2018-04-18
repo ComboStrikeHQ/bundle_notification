@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 module BundleNotification
-  VERSION = '0.1.0'
+  class Config
+    attr_accessor :serializer
+  end
 end

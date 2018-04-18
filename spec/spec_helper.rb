@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'support/simplecov' # Must be required first
 require 'bundler/setup'
 require 'bundle_notification'
@@ -11,5 +12,9 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before do
+    BundleNotification.instance_variable_set(:@config, nil)
   end
 end

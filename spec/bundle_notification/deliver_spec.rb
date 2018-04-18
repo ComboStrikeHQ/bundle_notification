@@ -1,13 +1,16 @@
 # frozen_string_literal: true
+
 require 'spec_helper'
 require 'action_mailer'
 
 RSpec.describe BundleNotification::Deliver do
   subject(:deliver) { described_class.new('TestMailer') }
+
   TestMailer = Class.new
 
   describe '#deliver_unsent_snippets' do
     let(:message_delivery_double) { instance_double(ActionMailer::MessageDelivery) }
+
     before do
       allow(message_delivery_double).to receive(:deliver_later)
       allow(TestMailer).to receive(:bundle_notify).and_return(message_delivery_double)
@@ -56,8 +59,8 @@ RSpec.describe BundleNotification::Deliver do
 
       it 'deliveries one notification for each recipient' do
         deliver.deliver_unsent_snippets
-        expect(TestMailer).to have_received(:bundle_notify).with('recipient_1', %w(a b)).once
-        expect(TestMailer).to have_received(:bundle_notify).with('recipient_2', %w(c)).once
+        expect(TestMailer).to have_received(:bundle_notify).with('recipient_1', %w[a b]).once
+        expect(TestMailer).to have_received(:bundle_notify).with('recipient_2', %w[c]).once
         expect(message_delivery_double).to have_received(:deliver_later).twice
       end
     end

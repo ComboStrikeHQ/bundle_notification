@@ -57,6 +57,24 @@ MyMailer.deliver_unsent_snippets #5
 
 This will send 2 emails: One to <recipient_1@example.com> with `['message 1', 'message 2']` and another to <recipient_2@example.com> with `['message 3']` 
 
+## Configuration
+
+The configuration can be accessed through `BundleNotification.config` and
+changed through `BundleNotification.configure`:
+
+```ruby
+BundleNotification.configure do |config|
+  config.serializer = JSON
+end
+```
+
+Available configration options are:
+
+* **serializer**: The serializer used for the snippet data. It is passed on to
+  `ActiveRecord::Base#serialize` as a second argument and, hence, can be
+  anything that implements the `dump` and `load` methods. Per ActiveRecord's
+  default it is YAML, if not set.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

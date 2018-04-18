@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'bundle_notification/snippet'
 
 module BundleNotification
