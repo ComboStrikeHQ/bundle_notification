@@ -9,6 +9,8 @@ module BundleNotification
 
     serialize :data, Serializer
 
+    validates :recipient, presence: true
+
     scope :unsent_for, ->(mailer_class) { where(mailer_class: mailer_class, sent_at: nil) }
   end
 end

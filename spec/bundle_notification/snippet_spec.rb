@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe BundleNotification::Snippet do
   it 'serializes and de-serializes the `data` attribute' do
-    described_class.create!(data: { foo: 'bar' })
+    create(:snippet, data: { foo: 'bar' })
     expect(described_class.last.data).to eq(foo: 'bar')
   end
 
@@ -13,20 +13,26 @@ RSpec.describe BundleNotification::Snippet do
       config.serializer = JSON
     end
 
-    described_class.create!(data: { foo: 'bar' })
+    create(:snippet, data: { foo: 'bar' })
     expect(described_class.last.data).to eq('foo' => 'bar')
     expect(described_class.last.read_attribute_before_type_cast(:data)).to eq('{"foo":"bar"}')
   end
 
   it 'serializes nil values' do
-    described_class.create!(data: nil)
+    create(:snippet, data: nil)
     expect(described_class.last.read_attribute_before_type_cast(:data)).to eq(nil)
     expect(described_class.last.data).to eq(nil)
   end
 
   it 'serializes empty values' do
-    described_class.create!(data: {})
+    create(:snippet, data: {})
     expect(described_class.last.read_attribute_before_type_cast(:data)).to eq("--- {}\n")
     expect(described_class.last.data).to eq({})
+  end
+
+  it 'validates presence of the recipient' do
+    snippet = build(:snippet, recipient: nil)
+    expect(snippet).not_to be_valid
+    expect(snippet.errors.full_messages).to include("Recipient can't be blank")
   end
 end
