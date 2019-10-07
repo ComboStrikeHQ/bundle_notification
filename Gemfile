@@ -6,5 +6,5 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'rubocop-ci', git: 'https://github.com/ad2games/rubocop-ci'
+  gem 'rubocop-ci', git: 'https://github.com/ComboStrikeHQ/rubocop-ci'
 end
