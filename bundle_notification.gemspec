@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'actionmailer', '>= 6 and < 7'
+  spec.add_development_dependency 'actionmailer', '~> 6.1.4'
   spec.add_development_dependency 'bundler', '~> 2.2.22'
   spec.add_development_dependency 'factory_girl'
   spec.add_development_dependency 'rake', '~> 10.0'
@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'sqlite3', '~> 1.3.6'
 
-  spec.add_dependency 'activerecord', '>= 6 and < 7'
-  spec.add_dependency 'activesupport', '>= 6 and < 7'
+  spec.add_dependency 'activerecord', '~> 6.1.4'
+  spec.add_dependency 'activesupport', '~> 6.1.4'
 end
 # rubocop:enable Metrics/BlockLength
