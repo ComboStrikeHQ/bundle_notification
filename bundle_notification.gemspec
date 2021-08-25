@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '2.5.3'
 
   spec.add_development_dependency 'actionmailer', '~> 6.1.4'
-  spec.add_development_dependency 'bundler', '~> 2.2.22'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'factory_girl'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
