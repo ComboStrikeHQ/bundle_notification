@@ -6,12 +6,12 @@ require 'bundle_notification/version'
 Gem::Specification.new do |spec|
   spec.name        = 'bundle_notification'
   spec.version     = BundleNotification::VERSION
-  spec.authors     = ['ad2games GmbH']
-  spec.email       = ['developers@ad2games.com']
+  spec.authors     = ['combostrike GmbH']
+  spec.email       = ['developers@combostrike.com']
 
   spec.summary     = 'Bundle ActionMailer notifications'
   spec.description = 'Bundle many ActionMailer messages for the same recipient into a single email'
-  spec.homepage    = 'http://ad2games.com'
+  spec.homepage    = 'http://combostrike.com'
   spec.license     = 'MIT'
 
   if spec.respond_to?(:metadata)
@@ -28,15 +28,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'actionmailer', '>= 4.0', '< 5.3'
-  spec.add_development_dependency 'bundler', '~> 1.14'
+  spec.add_development_dependency 'actionmailer', '~> 6.1.4'
+  spec.add_development_dependency 'bundler', '~> 2.2.22'
   spec.add_development_dependency 'factory_girl'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'sqlite3', '~> 1.4'
 
-  spec.add_dependency 'activerecord', '>= 4.0', '< 5.3'
-  spec.add_dependency 'activesupport', '>= 4.0', '< 5.3'
+  spec.add_dependency 'activerecord', '~> 6.1.4'
+  spec.add_dependency 'activesupport', '~> 6.1.4'
 end
 # rubocop:enable Metrics/BlockLength
